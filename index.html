@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSI — Boukri Service Informatique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="bg-white text-slate-900 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#accueil" class="flex-shrink-0 logo-img">
+                    <img src="assets/images/LOGO.jpeg"
+                         alt="BSI - Boukri Service Informatique"
+                         class="h-14 w-auto rounded-lg">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#accueil" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Accueil</a>
+                    <a href="#apropos" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">À Propos</a>
+                    <a href="#services" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Services</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Contact</a>
+                    <a href="#contact" class="btn-primary text-white text-sm font-medium px-6 py-2.5 rounded-lg inline-flex items-center gap-2">
+                        <span>Contactez-nous</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Menu">
+                    <i data-lucide="menu" class="w-6 h-6 text-slate-700"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/40 z-50 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 bottom-0 w-80 bg-white z-50 md:hidden shadow-2xl">
+        <div class="flex items-center justify-between p-6 border-b border-slate-100">
+            <img src="assets/images/LOGO.jpeg"
+                 alt="BSI" class="h-10 w-auto rounded-lg">
+            <button id="closeMenuBtn" class="p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Fermer">
+                <i data-lucide="x" class="w-5 h-5 text-slate-700"></i>
+            </button>
+        </div>
+        <div class="flex flex-col p-6 gap-1">
+            <a href="#accueil" class="mobile-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-brand-50 hover:text-brand-700 font-medium transition-colors">
+                <i data-lucide="home" class="w-5 h-5"></i> Accueil
+            </a>
+            <a href="#apropos" class="mobile-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-brand-50 hover:text-brand-700 font-medium transition-colors">
+                <i data-lucide="info" class="w-5 h-5"></i> À Propos
+            </a>
+            <a href="#services" class="mobile-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-brand-50 hover:text-brand-700 font-medium transition-colors">
+                <i data-lucide="settings" class="w-5 h-5"></i> Services
+            </a>
+            <a href="#contact" class="mobile-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-brand-50 hover:text-brand-700 font-medium transition-colors">
+                <i data-lucide="mail" class="w-5 h-5"></i> Contact
+            </a>
+            <div class="mt-4 pt-4 border-t border-slate-100">
+                <a href="#contact" class="mobile-link btn-primary text-white text-center font-medium px-6 py-3 rounded-lg flex items-center justify-center gap-2">
+                    Contactez-nous <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-brand-50/30">
+        <!-- Background Grid -->
+        <div class="hero-grid absolute inset-0"></div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-0 w-96 h-96 bg-brand-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-600/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-brand-400/3 rounded-full blur-2xl animate-float"></div>
+
+        <!-- Floating Tech Icons -->
+        <div class="absolute top-32 right-[15%] hidden lg:block animate-float" style="animation-delay: 0s;">
+            <div class="w-14 h-14 bg-white rounded-xl shadow-lg shadow-brand-500/10 flex items-center justify-center border border-slate-100">
+                <i data-lucide="monitor" class="w-6 h-6 text-brand-500"></i>
+            </div>
+        </div>
+        <div class="absolute top-[45%] right-[8%] hidden lg:block animate-float" style="animation-delay: 2s;">
+            <div class="w-12 h-12 bg-white rounded-xl shadow-lg shadow-brand-500/10 flex items-center justify-center border border-slate-100">
+                <i data-lucide="server" class="w-5 h-5 text-brand-600"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-32 right-[20%] hidden lg:block animate-float" style="animation-delay: 4s;">
+            <div class="w-10 h-10 bg-white rounded-lg shadow-lg shadow-brand-500/10 flex items-center justify-center border border-slate-100">
+                <i data-lucide="wifi" class="w-4 h-4 text-brand-400"></i>
+            </div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-0 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div class="order-2 lg:order-1">
+                    <div class="animate-fade-in-up" style="opacity:0; animation-fill-mode:forwards;">
+                        <span class="inline-flex items-center gap-2 bg-brand-50 text-brand-700 text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-full border border-brand-100 mb-6">
+                            <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>
+                            Votre partenaire IT de confiance
+                        </span>
+                    </div>
+
+                    <h1 class="animate-fade-in-up delay-100 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6" style="opacity:0; animation-fill-mode:forwards;">
+                        Solutions informatiques
+                        <span class="bg-gradient-to-r from-brand-600 via-brand-500 to-brand-400 bg-clip-text text-transparent"> fiables</span>
+                        et performantes
+                    </h1>
+
+                    <p class="animate-fade-in-up delay-200 text-lg text-slate-500 leading-relaxed mb-8 max-w-lg" style="opacity:0; animation-fill-mode:forwards;">
+                        Réparation, installation, infrastructure et support technique — nous accompagnons les professionnels avec expertise et réactivité.
+                    </p>
+
+                    <div class="animate-fade-in-up delay-300 flex flex-wrap gap-4 mb-12" style="opacity:0; animation-fill-mode:forwards;">
+                        <a href="#contact" class="btn-primary text-white font-medium px-8 py-3.5 rounded-xl inline-flex items-center gap-2 text-sm">
+                            <span>Contactez-nous</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#services" class="btn-outline border-2 border-slate-200 text-slate-700 font-medium px-8 py-3.5 rounded-xl inline-flex items-center gap-2 text-sm">
+                            <span>Nos services</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="animate-fade-in-up delay-400 flex gap-10" style="opacity:0; animation-fill-mode:forwards;">
+                        <div>
+                            <div class="text-3xl font-bold text-slate-900">10+</div>
+                            <div class="text-sm text-slate-400 mt-1">Ans d'expérience</div>
+                        </div>
+                        <div class="w-px bg-slate-200"></div>
+                        <div>
+                            <div class="text-3xl font-bold text-slate-900">500+</div>
+                            <div class="text-sm text-slate-400 mt-1">Clients satisfaits</div>
+                        </div>
+                        <div class="w-px bg-slate-200"></div>
+                        <div>
+                            <div class="text-3xl font-bold text-slate-900">24/7</div>
+                            <div class="text-sm text-slate-400 mt-1">Support disponible</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="order-1 lg:order-2 flex justify-center animate-scale-in delay-200" style="opacity:0; animation-fill-mode:forwards;">
+                    <div class="relative">
+                        <!-- Main Card -->
+                        <div class="w-72 h-72 sm:w-80 sm:h-80 bg-gradient-to-br from-brand-600 to-brand-800 rounded-3xl shadow-2xl shadow-brand-500/25 animate-pulse-glow flex items-center justify-center">
+                            <img src="assets/images/LOGO.jpeg"
+                                 alt="BSI Logo"
+                                 class="w-52 h-auto rounded-xl shadow-lg">
+                        </div>
+
+                        <!-- Floating Badge 1 -->
+                        <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl shadow-slate-200/50 px-4 py-3 border border-slate-100 animate-float" style="animation-delay: 1s;">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-green-500"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-800">Certifié</div>
+                                    <div class="text-[10px] text-slate-400">Professionnel</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2 -->
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl shadow-slate-200/50 px-4 py-3 border border-slate-100 animate-float" style="animation-delay: 3s;">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 bg-brand-50 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="zap" class="w-4 h-4 text-brand-500"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-800">Rapide</div>
+                                    <div class="text-[10px] text-slate-400">Intervention</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2">
+            <span class="text-xs text-slate-400 tracking-wider uppercase">Défiler</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+        </div>
+    </section>
+
+    <!-- À Propos Section -->
+    <section id="apropos" class="py-24 lg:py-32 bg-white relative">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 lg:mb-20 observe-animate">
+                <span class="inline-flex items-center gap-2 text-brand-600 text-xs font-semibold tracking-wider uppercase mb-4">
+                    <span class="w-8 h-px bg-brand-300"></span>
+                    Qui sommes-nous
+                    <span class="w-8 h-px bg-brand-300"></span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                    À propos de <span class="text-brand-600">BSI</span>
+                </h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+                    Une équipe dédiée à votre réussite technologique
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+                <!-- Left Image/Visual -->
+                <div class="observe-animate">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 lg:p-12 overflow-hidden">
+                            <!-- Decorative grid inside -->
+                            <div class="absolute inset-0 opacity-10"
+                                 style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 30px 30px;">
+                            </div>
+                            <div class="relative grid grid-cols-2 gap-4">
+                                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-colors">
+                                    <i data-lucide="cpu" class="w-8 h-8 text-brand-400 mb-3"></i>
+                                    <div class="text-white font-semibold text-sm">Hardware</div>
+                                    <div class="text-slate-400 text-xs mt-1">Expertise complète</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-colors">
+                                    <i data-lucide="cloud" class="w-8 h-8 text-brand-400 mb-3"></i>
+                                    <div class="text-white font-semibold text-sm">Cloud</div>
+                                    <div class="text-slate-400 text-xs mt-1">Solutions modernes</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-colors">
+                                    <i data-lucide="network" class="w-8 h-8 text-brand-400 mb-3"></i>
+                                    <div class="text-white font-semibold text-sm">Réseaux</div>
+                                    <div class="text-slate-400 text-xs mt-1">Infrastructure fiable</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-colors">
+                                    <i data-lucide="headphones" class="w-8 h-8 text-brand-400 mb-3"></i>
+                                    <div class="text-white font-semibold text-sm">Support</div>
+                                    <div class="text-slate-400 text-xs mt-1">Assistance 24/7</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accent dot -->
+                        <div class="absolute -bottom-3 -right-3 w-6 h-6 bg-brand-500 rounded-full"></div>
+                        <div class="absolute -top-3 -left-3 w-3 h-3 bg-brand-300 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="observe-animate">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight">
+                        Votre partenaire technologique depuis plus de <span class="text-brand-600">10 ans</span>
+                    </h3>
+                    <p class="text-slate-500 leading-relaxed mb-6">
+                        <strong class="text-slate-700">Boukri Service Informatique (BSI)</strong> est une entreprise spécialisée dans les services informatiques, la réparation de matériel et la mise en place d'infrastructures IT performantes. Nous mettons notre expertise au service des entreprises et particuliers pour garantir un environnement technologique fiable et sécurisé.
+                    </p>
+                    <p class="text-slate-500 leading-relaxed mb-8">
+                        Notre équipe de techniciens qualifiés intervient avec professionnalisme et réactivité pour répondre à tous vos besoins : dépannage, installation, maintenance et optimisation de vos systèmes informatiques.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Expertise technique certifiée et à jour</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Interventions rapides et solutions durables</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Relation de confiance et transparence totale</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Accompagnement personnalisé selon vos besoins</span>
+                        </div>
+                    </div>
+
+                    <a href="#services" class="inline-flex items-center gap-2 text-brand-600 font-medium text-sm hover:gap-3 transition-all">
+                        Découvrir nos services
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 lg:py-32 bg-slate-50 relative">
+        <div class="absolute inset-0 opacity-30"
+             style="background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,0.3) 1px, transparent 0); background-size: 40px 40px;">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 lg:mb-20 observe-animate">
+                <span class="inline-flex items-center gap-2 text-brand-600 text-xs font-semibold tracking-wider uppercase mb-4">
+                    <span class="w-8 h-px bg-brand-300"></span>
+                    Ce que nous offrons
+                    <span class="w-8 h-px bg-brand-300"></span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                    Nos <span class="text-brand-600">services</span>
+                </h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+                    Des solutions complètes pour tous vos besoins informatiques
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-2xl p-8 border border-slate-100 shadow-sm observe-animate relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 text-7xl font-black text-slate-50 service-number transition-colors duration-300 leading-none">01</div>
+                    <div class="relative">
+                        <div class="service-icon w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                            <i data-lucide="wrench" class="w-6 h-6 text-brand-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Réparation informatique</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                            Diagnostic et réparation de ordinateurs, portables, imprimantes et tout matériel informatique. Intervention rapide et garantie.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Hardware</span>
+                            <span class="text-[10px] font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Dépannage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-2xl p-8 border border-slate-100 shadow-sm observe-animate relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 text-7xl font-black text-slate-50 service-number transition-colors duration-300 leading-none">02</div>
+                    <div class="relative">
+                        <div class="service-icon w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                            <i data-lucide="download" class="w-6 h-6 text-brand-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Installation systèmes</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                            Installation et configuration de systèmes d'exploitation, logiciels professionnels et équipements informatiques sur mesure.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Logiciels</span>
+                            <span class="text-[10px] font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Configuration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-2xl p-8 border border-slate-100 shadow-sm observe-animate relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 text-7xl font-black text-slate-50 service-number transition-colors duration-300 leading-none">03</div>
+                    <div class="relative">
+                        <div class="service-icon w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                            <i data-lucide="network" class="w-6 h-6 text-brand-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Infrastructure réseau</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                            Conception et déploiement d'infrastructures réseau : câblage, serveurs, pare-feu, VPN et solutions de virtualisation.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Réseaux</span>
+                            <span class="text-[10px] font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Serveurs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-2xl p-8 border border-slate-100 shadow-sm observe-animate relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 text-7xl font-black text-slate-50 service-number transition-colors duration-300 leading-none">04</div>
+                    <div class="relative">
+                        <div class="service-icon w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                            <i data-lucide="headphones" class="w-6 h-6 text-brand-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Maintenance & Support</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                            Contrats de maintenance préventive, support technique réactif et surveillance continue de vos systèmes IT.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Maintenir</span>
+                            <span class="text-[10px] font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">Assistance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="mt-16 observe-animate">
+                <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-brand-500 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-10"
+                         style="background-image: linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px); background-size: 30px 30px;">
+                    </div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="relative flex flex-col lg:flex-row items-center justify-between gap-6">
+                        <div>
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">Besoin d'une solution sur mesure ?</h3>
+                            <p class="text-brand-100 text-sm lg:text-base">Contactez-nous pour discuter de votre projet et obtenir un devis gratuit.</p>
+                        </div>
+                        <a href="#contact" class="flex-shrink-0 bg-white text-brand-700 font-semibold px-8 py-3.5 rounded-xl inline-flex items-center gap-2 text-sm hover:bg-brand-50 hover:shadow-lg transition-all">
+                            <span>Demande de devis</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="stat-card text-center p-8 rounded-2xl border border-slate-100 bg-slate-50/50 observe-animate">
+                    <div class="w-12 h-12 mx-auto bg-brand-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-5 h-5 text-brand-600"></i>
+                    </div>
+                    <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">500+</div>
+                    <div class="text-sm text-slate-500">Clients satisfaits</div>
+                </div>
+                <div class="stat-card text-center p-8 rounded-2xl border border-slate-100 bg-slate-50/50 observe-animate">
+                    <div class="w-12 h-12 mx-auto bg-brand-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="settings" class="w-5 h-5 text-brand-600"></i>
+                    </div>
+                    <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">2000+</div>
+                    <div class="text-sm text-slate-500">Interventions réalisées</div>
+                </div>
+                <div class="stat-card text-center p-8 rounded-2xl border border-slate-100 bg-slate-50/50 observe-animate">
+                    <div class="w-12 h-12 mx-auto bg-brand-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="clock" class="w-5 h-5 text-brand-600"></i>
+                    </div>
+                    <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">10+</div>
+                    <div class="text-sm text-slate-500">Années d'expérience</div>
+                </div>
+                <div class="stat-card text-center p-8 rounded-2xl border border-slate-100 bg-slate-50/50 observe-animate">
+                    <div class="w-12 h-12 mx-auto bg-brand-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-600"></i>
+                    </div>
+                    <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">99%</div>
+                    <div class="text-sm text-slate-500">Taux de satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 lg:py-32 bg-slate-50 relative">
+        <div class="absolute inset-0 opacity-20"
+             style="background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,0.2) 1px, transparent 0); background-size: 40px 40px;">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 lg:mb-20 observe-animate">
+                <span class="inline-flex items-center gap-2 text-brand-600 text-xs font-semibold tracking-wider uppercase mb-4">
+                    <span class="w-8 h-px bg-brand-300"></span>
+                    Parlez-nous de votre projet
+                    <span class="w-8 h-px bg-brand-300"></span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                    Contactez-<span class="text-brand-600">nous</span>
+                </h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+                    Notre équipe est à votre disposition pour répondre à toutes vos questions
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+                <!-- Contact Info -->
+                <div class="lg:col-span-2 observe-animate">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">Informations de contact</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        N'hésitez pas à nous contacter par téléphone, email ou à nous rendre visite directement à notre bureau.
+                    </p>
+
+                    <div class="space-y-4">
+                        <!-- Phone -->
+                        <a href="tel:+213555123456" class="contact-info-item flex items-center gap-4 p-4 rounded-xl border border-slate-100 bg-white">
+                            <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5 text-brand-600"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Téléphone</div>
+                                <div class="text-sm font-semibold text-slate-800 mt-0.5">+213 555 123 456</div>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:contact@bsi-informatique.dz" class="contact-info-item flex items-center gap-4 p-4 rounded-xl border border-slate-100 bg-white">
+                            <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5 text-brand-600"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Email</div>
+                                <div class="text-sm font-semibold text-slate-800 mt-0.5">contact@bsi-informatique.dz</div>
+                            </div>
+                        </a>
+
+                        <!-- Address -->
+                        <div class="contact-info-item flex items-start gap-4 p-4 rounded-xl border border-slate-100 bg-white">
+                            <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-600"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Adresse</div>
+                                <div class="text-sm font-semibold text-slate-800 mt-0.5">123 Rue de l'Industrie<br>Alger, Algérie</div>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="contact-info-item flex items-start gap-4 p-4 rounded-xl border border-slate-100 bg-white">
+                            <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="clock" class="w-5 h-5 text-brand-600"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Horaires</div>
+                                <div class="text-sm font-semibold text-slate-800 mt-0.5">Dim - Jeu : 08h00 - 17h00<br>Sam : 09h00 - 13h00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-3 observe-animate">
+                    <form id="contactForm" class="bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-slate-100">
+                        <div class="grid sm:grid-cols-2 gap-5 mb-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Nom complet</label>
+                                <input type="text" required placeholder="Votre nom"
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Téléphone</label>
+                                <input type="tel" required placeholder="Votre numéro"
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all">
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Email</label>
+                            <input type="email" required placeholder="votre@email.com"
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all">
+                        </div>
+                        <div class="mb-5">
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Service souhaité</label>
+                            <select required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all appearance-none bg-white"
+                                    style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2394a3b8%22 stroke-width=%222%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center;">
+                                <option value="" disabled selected>Choisir un service</option>
+                                <option>Réparation informatique</option>
+                                <option>Installation systèmes & logiciels</option>
+                                <option>Infrastructure réseau</option>
+                                <option>Maintenance & support technique</option>
+                                <option>Autre demande</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Message</label>
+                            <textarea required rows="4" placeholder="Décrivez votre besoin..."
+                                      class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full text-white font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm">
+                            <span>Envoyer le message</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white relative overflow-hidden">
+        <!-- Decorative -->
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-900/20 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Main Footer -->
+            <div class="py-16 lg:py-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <img src="assets/images/LOGO.jpeg"
+                         alt="BSI Logo" class="h-12 w-auto rounded-lg mb-5 brightness-110">
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Boukri Service Informatique — Votre partenaire de confiance pour tous vos besoins en solutions informatiques.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-600 transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-600 transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-600 transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white mb-5">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#accueil" class="text-slate-400 text-sm hover:text-brand-400 transition-colors inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Accueil</a></li>
+                        <li><a href="#apropos" class="text-slate-400 text-sm hover:text-brand-400 transition-colors inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>À Propos</a></li>
+                        <li><a href="#services" class="text-slate-400 text-sm hover:text-brand-400 transition-colors inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Services</a></li>
+                        <li><a href="#contact" class="text-slate-400 text-sm hover:text-brand-400 transition-colors inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white mb-5">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-slate-400 text-sm hover:text-brand-400 transition-colors inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Réparation</a></li>
+                        <li><a href="#services" class="text-slate-400 text-sm hover:text-brand-400 transition-colors inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Installation</a></li>
+                        <li><a href="#services" class="text-slate-400 text-sm hover:text-brand-400 transition-colors inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Réseau & Serveurs</a></li>
+                        <li><a href="#services" class="text-slate-400 text-sm hover:text-brand-400 transition-colors inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white mb-5">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-slate-400 text-sm">+213 555 123 456</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-slate-400 text-sm">contact@bsi-informatique.dz</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0"></i>
+                            <span class="text-slate-400 text-sm">123 Rue de l'Industrie<br>Alger, Algérie</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-slate-500 text-xs">
+                    © <span id="currentYear"></span> BSI — Boukri Service Informatique. Tous droits réservés.
+                </p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-slate-500 text-xs hover:text-slate-300 transition-colors">Mentions légales</a>
+                    <a href="#" class="text-slate-500 text-xs hover:text-slate-300 transition-colors">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3"></div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-brand-600 text-white rounded-xl shadow-lg shadow-brand-500/30 flex items-center justify-center opacity-0 translate-y-4 transition-all duration-300 hover:bg-brand-700 hover:shadow-xl" aria-label="Retour en haut">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- scripts -->
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>
