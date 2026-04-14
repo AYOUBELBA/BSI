@@ -46,6 +46,46 @@
 
             lastScroll = currentScroll;
         });
+        // Nav Items Js
+
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all the sections
+            const sections = document.querySelectorAll('#accueil, #apropos, #services, #contact');
+            
+            // Get all the nav links (only the ones pointing to sections, excluding the button)
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Function to update which link has the underline
+            function updateActiveSection() {
+                let current = '';
+                
+                // Check which section is currently in view
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const scrollPosition = window.scrollY + 150; // 150px offset for fixed header
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                // Remove underline from all links
+                navLinks.forEach(link => {
+                    link.style.textDecoration = 'none';
+                    // Also remove any custom underline effect
+                    link.classList.remove('active');
+                });
+        
+        if (current) {
+            const activeLink = document.querySelector(`.nav-link[href="#${current}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+    }
+    
 
         // Back to Top
         const backToTop = document.getElementById('backToTop');
